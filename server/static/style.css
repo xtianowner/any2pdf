@@ -1,0 +1,60 @@
+/* purpose: 一键转 PDF 前端样式 —— 现代磨砂卡片 + 拖拽区 */
+:root{
+  --bg1:#6366f1; --bg2:#8b5cf6; --bg3:#ec4899;
+  --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+  --ok:#16a34a; --err:#dc2626; --accent:#6366f1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  font-family:-apple-system,'PingFang SC','Helvetica Neue',Arial,sans-serif;color:var(--ink);
+  background:linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+  background-attachment:fixed;
+}
+.card{
+  width:min(560px,100%);background:rgba(255,255,255,.86);
+  backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);
+  border:1px solid rgba(255,255,255,.6);border-radius:22px;padding:32px;
+  box-shadow:0 20px 60px rgba(30,41,59,.28);
+}
+header{text-align:center;margin-bottom:22px}
+h1{font-size:26px;font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:14px;margin-top:6px}
+.sub b{color:var(--ink);font-weight:600}
+
+.drop{
+  border:2px dashed #c7d2fe;border-radius:16px;background:rgba(99,102,241,.04);
+  padding:38px 20px;text-align:center;cursor:pointer;transition:.18s;
+}
+.drop:hover{border-color:var(--accent);background:rgba(99,102,241,.08)}
+.drop.over{border-color:var(--accent);background:rgba(99,102,241,.14);transform:scale(1.01)}
+.drop-icon{font-size:34px;opacity:.7}
+.drop-title{font-size:17px;font-weight:600;margin:8px 0 2px}
+.drop-hint{font-size:13px;color:var(--muted)}
+.link{background:none;border:none;color:var(--accent);font:inherit;font-weight:600;cursor:pointer;text-decoration:underline}
+
+.list{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:8px}
+.item{
+  display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);
+  border-radius:12px;background:#fff;font-size:14px;animation:in .25s ease
+}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.item .ic{font-size:18px;flex:none}
+.item .meta{flex:1;min-width:0}
+.item .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .st{font-size:12px;color:var(--muted);margin-top:2px}
+.item .st.err{color:var(--err)}
+.item.ok{border-color:#bbf7d0}
+.item.err{border-color:#fecaca;background:#fef2f2}
+.spin{width:16px;height:16px;border:2px solid #e2e8f0;border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+.btn{border:none;border-radius:10px;padding:8px 14px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.btn.dl{background:var(--accent);color:#fff}
+.btn.dl:hover{filter:brightness(1.08)}
+.btn.ghost{background:#f1f5f9;color:var(--ink)}
+.btn.ghost:hover{background:#e2e8f0}
+
+.footer{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.formats{margin-top:16px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6}
+.hidden{display:none!important}

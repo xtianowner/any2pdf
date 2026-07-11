@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "any2pdf"
+version = "0.1.0"
+description = "把 html/md/doc/docx/ppt/xls/图片 等一键转成 PDF —— CLI + Web + 桌面 GUI"
+requires-python = ">=3.10"
+dependencies = [
+    "markdown>=3.6",
+    "img2pdf>=0.5",
+    "Pillow>=10.0",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "python-multipart>=0.0.9",
+    "pywebview>=5.1",
+]
+
+[project.scripts]
+any2pdf = "any2pdf.cli:main"
+
+[tool.setuptools]
+packages = ["any2pdf"]
+
+[tool.setuptools.package-data]
+any2pdf = ["fontmap.conf"]

@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- purpose: 拖拽上传 → 转 PDF 的单页前端(Web 与桌面 GUI 共用) -->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>一键转 PDF</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>📄 一键转 PDF</h1>
+      <p class="sub">把 <b>Word / Excel / PPT / HTML / Markdown / 图片</b> 拖进来,转成 PDF</p>
+    </header>
+
+    <div id="drop" class="drop" tabindex="0">
+      <div class="drop-inner">
+        <div class="drop-icon">⬇</div>
+        <p class="drop-title">拖拽文件到这里</p>
+        <p class="drop-hint">或 <button id="pick" class="link">点击选择</button>(可多选)</p>
+      </div>
+      <input id="file" type="file" multiple hidden>
+    </div>
+
+    <ul id="list" class="list"></ul>
+
+    <footer id="footer" class="footer hidden">
+      <button id="zip" class="btn ghost hidden">⬇ 下载全部 (zip)</button>
+      <button id="clear" class="btn ghost">清空</button>
+    </footer>
+
+    <p class="formats" id="formats"></p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
