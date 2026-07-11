@@ -1,12 +1,14 @@
 <!-- purpose: any2pdf 项目说明 —— 各种文档一键转 PDF(CLI + Web + 桌面 GUI) -->
 - 创建时间: 2026-06-29 15:14:00
-- 更新时间: 2026-06-29 17:36:23
+- 更新时间: 2026-07-11 12:42:24
 - 时区: Asia/Shanghai
 
 # 一键转 PDF (any2pdf)
 
 把 **Word / Excel / PPT / HTML / Markdown / 图片** 等各种文档一键转成 PDF。
 三种用法共享同一个转换内核:命令行、Web 上传、桌面拖拽小窗。
+
+![Web / 桌面小窗界面：把文件拖进来，转成 PDF](docs/screenshot-web.png)
 
 ---
 
